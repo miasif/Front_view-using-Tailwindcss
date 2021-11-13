@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Minible - Nodejs Admin & Dashboard Template | Docs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Minible is a fully featured premium Nodejs admin dashboard template built on top of awesome Bootstrap 5"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body data-sidebar="dark">
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      @@include("partials/topbar.html") @@include("partials/sidebar.html")
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+              <div class="col-12">
+                <div
+                  class="
+                    page-title-box
+                    d-flex
+                    align-items-center
+                    justify-content-between
+                  "
+                >
+                  <h4 class="mb-0 font-size-18">Getting Started</h4>
+
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="javascript: void(0);">Docs</a>
+                      </li>
+                      <li class="breadcrumb-item active">Getting Started</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="card">
+              <div class="card-body">
+                <div class="p-lg-3">
+                  <h5 class="mt-0 mb-2">Introduction</h5>
+                  <p>
+                    Minible is a fully featured, multi-purpose admin template
+                    built with Bootstrap v5.0.0-beta2, HTML5, CSS3 and JQuery
+                    and Nodejs ( EJS – Embedded Javascript Templates). It’s a
+                    fully responsive and have the very clean user interface that
+                    comes with a huge collection of components, widgets, UI
+                    elements.
+                  </p>
+                </div>
+
+                <div class="p-lg-3">
+                  <h5 class="mt-0 mb-2">Structure</h5>
+                  <p>
+                    Extract the zip file you received after purchase and you
+                    would find the exact below files and folders:
+                  </p>
+
+                  <pre class="mb-0">
+├── controllers
+├── i18n
+    ├── de.json
+    ├── en.json
+    ├── es.json
+    ├── it.json
+    └── ru.json
+├── public
+├── routers
+    └── route.js
+├── views
+    ├── all pages folders
+    └── all layouts files.
+├── authrouter.js
+├── index.js
+├── package.json
+└── package-lock.json
+</pre
+                  >
+                </div>
+                <!-- end padding-->
+              </div>
+              <!--end card body-->
+            </div>
+            <!-- end card-->
+          </div>
+          <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        @@include("partials/footer.html")
+      </div>
+      <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
