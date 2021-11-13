@@ -38,7 +38,7 @@ function cartController() {
                 cart.totalQty = cart.totalQty + 1
                 cart.totalPrice =  cart.totalPrice + parseInt(req.body.price)
             }
-            console.log({price:cart.totalPrice})
+         
             return res.json({ totalQty: req.session.cart.totalQty })
         }
     }
