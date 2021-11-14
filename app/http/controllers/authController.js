@@ -7,6 +7,12 @@ function authController() {
       res.render("auth/login");
     },
     postLogin(req, res, next) {
+      const { email, password } = req.body;
+      // Validate request
+      if (!email || !password) {
+        req.flash("error", "All fields are required");
+        return res.redirect("/login");
+      }
       passport.authenticate("local", (err, user, info) => {
         if (err) {
           req.flash("error", info.message);
@@ -16,12 +22,13 @@ function authController() {
           req.flash("error", info.message);
           return res.redirect("/login");
         }
-        req.login(user, (err) => {
+        req.logIn(user, (err) => {
           if (err) {
             req.flash("error", info.message);
             return next(err);
           }
-          return res.redirect("/");
+
+          return res.redirect(_getRedirectUrl(req));
         });
       })(req, res, next);
     },
