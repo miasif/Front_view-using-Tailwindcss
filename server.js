@@ -24,11 +24,6 @@ mongoose.connect("mongodb://localhost/foodApp", function (err, db) {
   }
 });
 
-//Passport config
-const passportInit = require("./app/config/passport");
-passportInit(passport);
-app.use(passport.initialize());
-app.use(passport.session());
 //session store
 const MongoDBStore = new MongoSessionStore({
   uri: "mongodb://localhost/foodApp",
@@ -43,7 +38,11 @@ app.use(
     store: MongoDBStore,
   })
 );
-
+// Passport config
+const passportInit = require("./app/config/passport");
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 
 // Assets
