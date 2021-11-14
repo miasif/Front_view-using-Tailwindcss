@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("express-flash");
 const MongoSessionStore = require("connect-mongodb-session")(session);
+const passport = require("passport");
 
 // Database connection
 
@@ -23,6 +24,12 @@ mongoose.connect("mongodb://localhost/foodApp", function (err, db) {
   }
 });
 
+//Passport config
+const passportInit = require("./app/config/passport");
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+//session store
 const MongoDBStore = new MongoSessionStore({
   uri: "mongodb://localhost/foodApp",
   collection: "sessions",
@@ -37,22 +44,6 @@ app.use(
   })
 );
 
-// //Session store
-// let mongoStore = new MongoDbStore({
-//   mongooseConnection: connect,
-//   collcetion: "sessions",
-// });
-
-// //Session config
-// app.use(
-//   session({
-//     secret: process.env.COOKIE_SECRET,
-//     resave: false,
-//     mongoStore,
-//     saveUniitialized: false,
-//     cookie: { maxAge: 1000 * 60 * 60 * 24 },
-//   })
-// );
 app.use(flash());
 
 // Assets
